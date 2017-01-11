@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Code-404</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" >
+<style>
+<!--
+body {
+  margin: 0 auto;
+  padding-top: 10px;
+  font: italic 13px/1.2em Georgia, serif;
+  font-weight: bold;
+  color: #3aa509;
+  text-align: center;
+}
+
+p {
+  width: 1000px;
+  margin-top: 10px;
+}
+
+.countdown_link {
+  font-size: 20px;
+}
+-->
+</style>
+<link href="files/style/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+<p>Code 404…… <span class="countdown_link"> 3 </span> Seconds after the return to the home page ^_^</p>
+</body>
+</html>
+<script type="text/javascript" src="files/style/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	function jump(count) {
+	    window.setTimeout(function(){
+	        count--;
+	        if(count > 0) {
+	            $('span[class="countdown_link"]').text(count);
+	            jump(count);
+	        } else {
+	            location.href="index.php";
+	        } 
+	    }, 1000); 
+	} 
+	jump(3);
+});
+</script>
