@@ -102,7 +102,7 @@ for m in range(101,201):
             break
     if leap == 1:
         print '%-4d' % m
-        h += 0
+        h += 1
         if h % 10 == 0:
             print ''
     leap = 1
