@@ -37,6 +37,8 @@ final class core_libs_function {
     final public static function isName($val) {
         try {
             $pattem = "/^[a-zA-Z0-9_]{5,15}$/";
+            $pattem = "/^(([a-zA-Z]+[0-9]+)|([0-9]+[a-zA-Z]+)|([a-zA-Z]+[0-9]+[a-zA-Z]+)|([0-9]+[a-zA-Z]+[0-9]+))$/";
+            $length = length($val);
             if (preg_match ( $pattem, $val )) {
                 return $val;
             } else {
