@@ -60,8 +60,8 @@ class core_libs_paging {
             } else {
                 $p = $pagestart - $pageoffset;
             }
-            $pages = $p + $pagenum - 1;
         }
+        $pages = $p + $pagenum - 1;
         
         /** 分页显示逻辑 - 判断是否为首页 | 上一页 */
         $paging_html = '<div class="pagination"><a id="boder-clear">记录数：' . $paging_count . ' | 页码数：' . $num . '</a><ul>';
@@ -72,6 +72,9 @@ class core_libs_paging {
             $paging_html .= '<li><a href="' . $paging_url . '&p=' . $prev . '">&lt;&lt;</a></li>';
         }
         
+        /** 分页显示逻辑 - 计算是否显示省略号(前) */
+        if($num>6 && ($pagestart-2)) $paging_html .= '...';
+        
         /** 分页显示逻辑 - 计算当前页 */
         for($i = $p; $i <= $pages; $i ++) {
             if ($i == $pagestart) {
@@ -80,6 +83,9 @@ class core_libs_paging {
                 $paging_html .= '<li><a href="' . $paging_url . '&p=' . $i . '">' . $i . '</a></li>';
             }
         }
+        
+        /** 分页显示逻辑 - 计算是否显示省略号(前) */
+        if($num>6 && ($pagestart+3)<$num) $paging_html .= '...';
         
         /** 分页显示逻辑 - 判断是否为尾页 | 下一页 */
         if ($paging_start == $num) {
