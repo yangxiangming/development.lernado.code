@@ -273,3 +273,15 @@ function outputJson($array, $isboor = true, $isheader = true) {
         exit (stripcslashes(json_encode((array)($array)), JSON_UNESCAPED_UNICODE));
     }
 }
+
+/**
+ * description 获取微秒时间
+ */
+function getMsec($isboor = true) {
+    list($usec, $sec) = explode(" ", microtime());
+    $microtime = ((float)$usec+(float)$sec);
+    list($usec, $sec) = explode(".", $microtime);
+    $date = date('Y-m-d H:i:s x', $usec);
+    $result = str_replace('x', $sec, $date);
+    return $isboor?$result.'Msec':$microtime;
+}
