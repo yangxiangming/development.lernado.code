@@ -275,7 +275,7 @@ function outputJson($array, $isboor = true, $isheader = true) {
 }
 
 /**
- * description 获取微秒时间
+ * description 获取毫秒时间
  */
 function getMsec($isboor = true) {
     list($usec, $sec) = explode(" ", microtime());
