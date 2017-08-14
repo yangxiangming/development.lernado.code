@@ -285,3 +285,13 @@ function getMsec($isboor = true) {
     $result = str_replace('x', $sec, $date);
     return $isboor?$result.'Msec':$microtime;
 }
+
+/**
+ * description 获取设备
+ */
+function isClient() {
+    if(!empty($_SERVER('HTTP_USER_AGENT') && (substr($_SERVER('HTTP_USER_AGENT'), 0, 12) == 'great-winner') || strpos($_SERVER['HTTP_USER_AGENT']), 'great-winner')){
+        return true;
+    }
+    return false;
+}
