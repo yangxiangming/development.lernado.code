@@ -5,7 +5,7 @@
  *
  */
 
-class Sample {
+class Develop {
   static public $instance; // 静态变量保存类中的实例
 
   private function __construct(){} // 防止外部实例化
